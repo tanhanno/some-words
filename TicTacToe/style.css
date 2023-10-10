@@ -1,0 +1,90 @@
+:root {
+    --background-color: #493B2A;
+    --background-color2: #61513d;
+    --cross-color: #593F62;
+    --circle-color: #A5C4D4;
+    --text-color: #8499B1;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+#gameboard {
+    width: 600px;
+    height: 600px;
+    background-color: var(--background-color2);
+    display: flex;
+    flex-wrap: wrap;
+    border: solid 1px var(--background-color2);
+}
+
+#gameinfo {
+    font-size: 24px;
+    margin: 2px;
+    padding: 4px;
+    margin-bottom: 20px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 18px;
+    background-color: var(--background-color2);
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: var(--circle-color);
+}
+
+.square {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border: solid 2px black;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    border: 15px solid var(--circle-color);
+    box-sizing: border-box;
+}
+
+.cross {
+    height: 180px;
+    width: 180px;
+    position: relative;
+    transform: rotate(45deg);
+}
+.cross:before, .cross:after {
+    content: "";
+    position: absolute;
+    background-color: var(--cross-color);
+}
+.cross:before {
+    left: 50%;
+    width: 30%;
+    margin-left: -15%;
+    height: 100%;
+}
+.cross:after {
+    top: 50%;
+    height: 30%;
+    margin-top: -15%;
+    width: 100%;
+}
